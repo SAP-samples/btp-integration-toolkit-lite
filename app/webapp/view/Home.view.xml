@@ -44,13 +44,13 @@
 							titleStyle="H2"
 							class="sapUiTinyMarginTopBottom"/>
 						<Text
-							text="Access Ariba Application to view Sourcing and Supplier Data"
+							text="Access SAP Ariba Application"
 							class="sapUiTinyMarginBottom"/>
 						<Link
 							text="SAP Ariba Procurement"
 							href="{i18n>aribarealm}"
 							target="_blank"
-							tooltip="Access Ariba Application to view Sourcing Events and Supplier Data"/>
+							tooltip="Access Ariba Application"/>
 						
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
@@ -64,7 +64,7 @@
 							color="Default"/>
 						<Title
 							id="productTile"
-							text="BTP Job Scheduler"
+							text="SAP BTP Job Scheduler"
 							level="H3"
 							titleStyle="H2"
 							class="sapUiTinyMarginTopBottom"/>
@@ -72,10 +72,10 @@
 							text="Schedule Batch Job in Business Technology Platform to run Integration Jobs"
 							class="sapUiTinyMarginBottom"/>
 						<Link
-							text="SAP Business Technology Platform"
+							text="SAP BTP Jobscheduling Service"
 							href="{i18n>btplink}"
 							target="_blank"
-							tooltip="Access Business Technology Platform"/>
+							tooltip="Access BTP Job Scheduling"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 				<l:BlockLayoutCell
@@ -87,18 +87,18 @@
 							size="2.5rem"
 							color="Default"/>
 						<Title
-							text="SAP Ariba Integration Lite GitHub"
+							text="SAP BTP Logging Dashboard"
 							level="H3"
 							titleStyle="H2"
 							class="sapUiTinyMarginTopBottom"/>
 						<Text
-							text="Access to Source Code, Integration Lite Documentation and other details"
+							text="Access Application Logging Service to access and visualize your application log data and monitor any error or warning messages associated with ITK Lite Transfer Utility."
 							class="sapUiTinyMarginBottom"/>
 						<Link
-							text="Git Hub"
-							href="{i18n>gitlink}"
+							text="Kibana Logging Dashboard"
+							href="{i18n>loggingservice}"
 							target="_blank"
-							tooltip="Access ITK Git"/>
+							tooltip="Access Logging Dashboard"/>
 					</l:VerticalLayout>
 				</l:BlockLayoutCell>
 			</l:BlockLayoutRow>
