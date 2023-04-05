@@ -1,0 +1,204 @@
+{
+	"_version": "1.21.0",
+	"sap.app": {
+		"id": "com.sap.pgp.dev.ItkApp",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"fallbackLocale": "en",
+			"supportedLocales": ["en", "de"]
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+			  "uri": "/backend/v2/itk/",
+			  "type": "OData",
+			  "settings": {
+				"odataVersion": "2.0"
+			  }
+			}
+		  }
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal",
+			"sap_fiori_3"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.sap.pgp.dev.ItkApp.view.App",
+			"type": "XML",
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.tnt": {},
+				"sap.ui.layout": {},
+				"sap.uxap": {},
+				"sap.suite.ui.microchart": {
+					"lazy": true
+				}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleUrl": "i18n/i18n.properties",
+					"async": true,
+					"fallbackLocale": "en",
+					"supportedLocales": ["en", "de"]
+				}
+			},
+			"side": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/sideContent.json"
+			},
+			"ItkMo": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+				  "defaultBindingMode": "TwoWay",
+				  "defaultCountMode": "Inline",
+				  "refreshAfterChange": true,
+				  "metadataUrlParams": {
+					"sap-value-list": "none"
+										}
+									}
+							}
+		},
+		    "resources": {
+				"css": [{
+					"uri": "css/style.css"
+				}]
+				},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"controlId": "mainContents",
+				"viewType": "XML",
+				"controlAggregation": "pages",
+				"viewPath": "com.sap.pgp.dev.ItkApp.view"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "home",
+					"target": "home"
+				},
+				{
+					"pattern": "ImportantLinks",
+					"name": "importantLinks",
+					"target": "importantLinks"
+				},
+				{
+					"pattern": "Legal",
+					"name": "legal",
+					"target": "legal"
+				},
+				{
+					"pattern": "RealmConfig",
+					"name": "RealmConfig",
+					"target": "RealmConfig"
+				},
+				{
+					"pattern": "ImportEventsConfig",
+					"name": "ImportEventsConfig",
+					"target": "ImportEventsConfig"
+				},
+				{
+					"pattern": "ExportEventsConfig",
+					"name": "ExportEventsConfig",
+					"target": "ExportEventsConfig"
+				},
+				{
+					"pattern": "AribaAuthConfig",
+					"name": "AribaAuthConfig",
+					"target": "AribaAuthConfig"
+				},
+				{
+					"pattern": "AribaSMTPConfig",
+					"name": "AribaSMTPConfig",
+					"target": "AribaSMTPConfig"
+				},
+				{
+					"pattern": "Transactions",
+					"name": "Transactions",
+					"target": "Transactions"
+				},
+				{
+					"pattern": "FTPRealm/:objectId:",
+					"name": "FTPRealm",
+					"target": "FTPRealm"
+				},
+				{
+					"pattern": "SpendVizConfig",
+					"name": "SpendVizConfig",
+					"target": "SpendVizConfig"
+				}
+			],
+			"targets": {
+				"home": {
+					"viewId": "home",
+					"viewName": "Home"
+				},
+				"importantLinks": {
+					"viewId": "importantLinks",
+					"viewName": "ImportantLinks"
+				},
+				"RealmConfig": {
+					"viewId": "RealmConfig",
+					"viewName": "RealmConfig"
+				},
+				"AribaAuthConfig": {
+					"viewId": "AribaAuthConfig",
+					"viewName": "AribaAuthConfig"
+				},
+				"ImportEventsConfig": {
+					"viewId": "ImportEventsConfig",
+					"viewName": "ImportEventsConfig"
+				},
+				"ExportEventsConfig": {
+					"viewId": "ExportEventsConfig",
+					"viewName": "ExportEventsConfig"
+				},
+				"AribaSMTPConfig": {
+					"viewId": "AribaSMTPConfig",
+					"viewName": "AribaSMTPConfig"
+				},
+				"Transactions": {
+					"viewId": "Transactions",
+					"viewName": "Transactions"
+				},
+				"FTPRealm": {
+					"viewId": "FTPRealm",
+					"viewName": "FTPRealm"
+				},
+				"FTPRealmDetails": {
+					"viewName": "FTPRealmDetails",
+					"viewId": "FTPRealmDetails"
+				   
+				  },
+				 "SpendVizConfig": {
+					"viewId": "SpendVizConfig",
+					"viewName": "SpendVizConfig"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,173 @@
+## Generated mta.yaml based on template version 0.4.0
+## appName = ItkApp
+## language=nodejs; multiTenant=false
+## approuter=
+_schema-version: '3.1'
+ID: ItkApp
+version: 1.0.0
+description: "ITK Lite Portal"
+parameters:
+  enable-parallel-deployments: true
+   
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install --production
+      - cds build --production
+
+modules:
+# --------------------- FRONTEND MODULE ------------------------
+ - name: ItkApp
+# --------------------------------------------------------------
+   type: html5
+   path: app/
+   parameters:
+     disk-quota: 512M
+     memory: 512M
+
+   build-parameters:
+     ignore: ["node_modules/"]  
+     builder: custom
+     commands:
+        - ui5 build
+   requires:
+    # Resources extracted from CAP configuration
+    - name: ItkApp_xsuaa
+    # - name: ItkApp_destination
+    - name: ItkApp_connectivity
+    - name: backend 
+      group: destinations
+      properties:
+        name: backend
+        url: ~{srv-url}
+        forwardAuthToken: true 
+  #  routes:
+  #    - route: backend
+  #      destination: ItkApp_destination
+ # --------------------- SERVER MODULE ------------------------
+ - name: ItkApp-srv
+ # ------------------------------------------------------------
+   type: nodejs
+   path: gen/srv
+   properties:
+      EXIT: 1  # required by deploy.js task to terminate 
+      SAP_JWT_TRUST_ACL:
+      - clientid: "*"
+      identityzone: "*"
+      JOB_SCHED_APP_URL: '${org}-${space}-ItkApp.${default-domain}'
+      CRED_NAMESPACE: "SolarchitectureCF"
+      EMAIL_TEMPLATE: "./srv/utils/email-body.json"
+      ITK_CRED_NAME: "ITKPassword"
+      SMTP_CRED_NAME: "SMTPPassword"
+      SFTP_CRED_PKNAME: "SFTPPrivateKey"
+      SFTP_CRED_PASSNAME: "FTPPassword"
+   provides:
+    - name: backend      # required by consumers of CAP services (e.g. approuter)
+      properties:
+        srv-url: ${default-url}
+   requires:
+    # Resources extracted from CAP configuration
+    - name: ItkApp_xsuaa
+    - name: ItkApp-pgdatabase
+    - name: ItkApp_destination
+    - name: ItkApp_connectivity
+    - name: mycreds
+    - name: backend 
+      group: destinations
+      properties:
+        name: backend
+        url: ~{srv-url}
+        forwardAuthToken: true 
+    - name: ITKApp-jobscheduler    
+    - name: ITKApp-log
+  #  routes:
+  #    - route: backend
+  #      destination: ItkApp_destination
+ # --------------------- DB MODULE ------------------------
+ - name: ItkApp-db
+ # ------------------------------------------------------------
+   type: custom
+   path: gen/db
+   parameters:
+     buildpacks: [https://github.com/cloudfoundry/apt-buildpack#v0.2.2, nodejs_buildpack] 
+     no-route: true
+     no-start: true
+     disk-quota: 2GB
+     memory: 512MB
+     tasks:
+     - name: deploy_to_postgresql
+       command: chmod 755 deploy.sh && ./deploy.sh
+       disk-quota: 2GB
+       memory: 512MB      
+   build-parameters:
+     ignore: ["node_modules/"]
+   requires:
+     - name: ItkApp-pgdatabase
+
+resources:
+# ------------------------------------------------------------
+ - name: ItkApp-pgdatabase
+# ------------------------------------------------------------
+   parameters:
+     path: ./pg-options.json
+     service: postgresql-db
+     service-plan: standard
+     skip-service-updates:
+      parameters: true
+     service-tags:
+       - plain
+   type: org.cloudfoundry.managed-service
+
+# ------------------------------------------------------------
+ - name: ItkApp_xsuaa
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service: xsuaa
+     service-plan: application  
+     path: ./xs-security.json
+     config:
+       xsappname: ItkApp-${space}
+       tenant-mode: dedicated
+
+# ------------------------------------------------------------
+ - name: ItkApp_destination
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service-plan: lite
+     service: destination
+
+# ------------------------------------------------------------
+ - name: ItkApp_connectivity
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service-plan: lite
+     service: connectivity
+
+# ------------------------------------------------------------
+ - name: mycreds
+# ------------------------------------------------------------
+   type: org.cloudfoundry.existing-service
+   parameters:
+     service-name: solarchitecture-cf-credstore
+
+# ------------------------------------------------------------
+ - name: ITKApp-jobscheduler
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service-plan: standard
+     service: jobscheduler
+     config:
+      enable-xsuaa-support: true      
+
+# ------------------------------------------------------------
+ - name: ITKApp-log
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service-plan: lite
+     service: application-logs

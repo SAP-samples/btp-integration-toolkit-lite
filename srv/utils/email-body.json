@@ -1,0 +1,32 @@
+[
+{
+    "Id": 1,
+    "Subject": "Successful Export Events",
+    "Body": "<p>Dear Administrator, <br> The Job extractor to pull data from Ariba to SFTP Server has been successfully executed. Please validate the Destination folder and process accordingly.</p><p>- ITK Scheduler</p>"
+},
+{
+    "Id": 2,
+    "Subject": "Unsuccessful Export Events",
+    "Body": "<p>Dear Administrator,<br> The Job extractor from Ariba to SFTP Server failed. Please check the Application logs in BTP Kibana Dashboard.</p><p>Thanks,</p><p>ITK Scheduler</p>"
+},
+{
+    "Id": 3,
+    "Subject": "Successful Import Events",
+    "Body": "<p>Dear Administrator, <br> The Job extractor to pull data from Ariba to SFTP Server has been successfully executed. Please validate the Destination folder and process accordingly.</p><p>- ITK Scheduler</p>"
+},
+{
+    "Id": 4,
+    "Subject": "Unsuccessful Import Events",
+    "Body": "<p>Dear Administrator, <br> The Job extractor from SFTP Server to Ariba failed. Please check the Application logs in BTP Kibana Dashboard.</p><p>- ITK Scheduler</p>"
+},
+{
+    "Id": 5,
+    "Subject": "Successful SpendViz Events",
+    "Body": "<p>Dear Administrator, <br> The Job extractor to pull data from Ariba to SFTP Server has been successfully executed. Please validate the Destination folder and process accordingly.</p><p>- ITK Scheduler</p>"
+},
+{
+    "Id": 6,
+    "Subject": "Unsuccessful SpendViz Events",
+    "Body": "<p>Dear Administrator, <br> The Job extractor from SFTP Server to Ariba failed. Please check the Application logs in BTP Kibana Dashboard.</p><p>- ITK Scheduler</p>"
+}
+]

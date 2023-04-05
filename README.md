@@ -1,36 +1,28 @@
-# SAP-samples/repository-template
-This default template for SAP Samples repositories includes files for README, LICENSE, and .reuse/dep5. All repositories on github.com/SAP-samples will be created based on this template.
-
-# Containing Files
-
-1. The LICENSE file:
-In most cases, the license for SAP sample projects is `Apache 2.0`.
-
-2. The .reuse/dep5 file: 
-The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the .reuse/dep5 in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
-
-3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
-
-# [Title]
-<!-- Please include descriptive title -->
-
-<!--- Register repository https://api.reuse.software/register, then add REUSE badge:
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
--->
-
-## Description
-<!-- Please include SEO-friendly description -->
+# Welcome to ITK Lite 4 Procurement
+Welcome to sample use case of ITK Lite 4 Procurement BTP Application. This application developed on the CAPM (Cloud Application Programming Model) is a possible alterative to current ITK running as command line utility to transfer Master, Transactional and Spend Data between your SAP Ariba system and your back-end ERP environment.   
 
 ## Requirements
+Please see the pre-requisites and the required BTP services in SAP Discovery Center mission and activate before cloning/forking the GIT Repository.
 
-## Download and Installation
+## Description
+As SAP announced EOS(End of Support & Service) for current ITK tool from December 31, 2023. The ITK Lite powered by BTP solution allows buying organizations to integrate their Non SAP-ERP systems through SFTP channel with an SAP Ariba cloud solution to exchange master, transactional and spend viz data via CSV file upload and download. 
+
+Sample View of ITK Lite Admin Application
+
+![Reference Image](/ITKLite.jpg)
+
+## Deploy the Application
+Simply run the following command to deploy the deployable file to your BTP Cloud Foundry environment.
+
+```
+npm run mta:deploy
+```
 
 ## Known Issues
-<!-- You may simply state "No known issues. -->
+No known Issues
 
 ## How to obtain support
-[Create an issue](https://github.com/SAP-samples/<repository-name>/issues) in this repository if you find a bug or have questions about the content.
+[Create an issue](https://github.com/SAP-samples/btp-integration-toolkit-lite/issues) in this repository if you find a bug or have questions about the content.
  
 For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
 

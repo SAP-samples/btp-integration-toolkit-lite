@@ -1,0 +1,32 @@
+{
+  "name": "itkbtpapp",
+  "version": "0.0.1",
+  "description": "",
+  "devDependencies": {
+    "@sap/grunt-sapui5-bestpractice-build": "1.4.2",
+    "@sap/grunt-sapui5-bestpractice-test": "2.0.1",
+    "sqlite3": "^5.0.0"
+  },
+  "dependencies": {
+    "@openui5/sap.m": "^1.110.0",
+    "@openui5/sap.tnt": "^1.110.0",
+    "@openui5/sap.ui.core": "^1.110.0",
+    "@openui5/sap.ui.layout": "^1.110.0",
+    "@openui5/sap.uxap": "^1.110.0",
+    "@openui5/themelib_sap_fiori_3": "^1.110.0",
+    "@sap/approuter": "^12.0.0",
+    "@sap/audit-logging": "^3.2.0",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.19",
+    "@sap/hana-client": "^2.5.109",
+    "@sap/xssec": "^3.0.9",
+    "@ui5/cli": "^2.14.9",
+    "passport": "0.6.0"
+  },
+  "scripts": {
+    "start": "node node_modules/@sap/approuter/approuter.js",
+    "local:approuter": "cd app/ && npm start"
+  },
+  "engines": {
+    "node": "v16.18.1"
+  }
+}

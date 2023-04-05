@@ -1,0 +1,66 @@
+<mvc:View displayBlock="true" controllerName="com.sap.pgp.dev.ItkApp.controller.Transactions"
+        xmlns="sap.ui.table"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:unified="sap.ui.unified"
+		xmlns:core="sap.ui.core"
+		xmlns:commons="sap.ui.commons"
+		xmlns:m="sap.m"
+		height="100%">
+
+	<m:Page
+			showHeader="false"
+			enableScrolling="false"
+			class="sapUiContentPadding">
+		<m:content>
+			<Table
+					id="realmtable"
+					rows="{TransactionModel>/results}"
+					selectionMode="Single"
+					visibleRowCount="15"
+					sort="sorttransactionDate"
+					setEnableGrouping="true"
+					ariaLabelledBy="title">
+
+				<extension>
+					<m:OverflowToolbar style="Clear">
+						<m:Title id="title" text="Transaction Tracker"/>
+						<m:ToolbarSpacer/>
+						<m:SearchField
+							placeholder="Enter your Filter"
+							value=""
+							search="filterGlobally"
+							width="15rem"/>
+					</m:OverflowToolbar>
+				</extension>
+
+				<columns>
+					<Column id="txdate" sortProperty="TransactionDate" filterProperty="TransactionDate">
+						<m:Label text="{i18n>txndate}"/>
+						<template>
+							<m:Text text="{TransactionModel>txdate}" wrapping="false"/>
+						</template>
+					</Column>
+					<Column filterProperty="EventName">
+						<m:Label text="{i18n>EventName}"/>
+						<template>
+							<m:Text text="{TransactionModel>EventName}" wrapping="false"/>
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="{i18n>emessage}"/>
+						<template>
+							<m:Text text="{TransactionModel>EventMessage}" wrapping="false"/>
+						</template>
+					</Column>
+					<Column filterProperty="Status">
+						<m:Label text="{i18n>status}"/>
+						<template>
+							<m:Text text="{TransactionModel>Status}" wrapping="false"/>
+						</template>
+					</Column>
+				</columns>
+			</Table>
+		</m:content>
+	</m:Page>
+
+</mvc:View>

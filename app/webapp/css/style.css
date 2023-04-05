@@ -1,0 +1,6 @@
+/* Enter your custom styles here */
+.myBackgroundStyle {
+    background-image: url(../images/homeImage_old.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

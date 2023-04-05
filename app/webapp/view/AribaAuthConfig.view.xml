@@ -1,0 +1,63 @@
+<mvc:View displayBlock="true" controllerName="com.sap.pgp.dev.ItkApp.controller.AribaAuthConfig"
+        xmlns="sap.ui.table"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:unified="sap.ui.unified"
+		xmlns:core="sap.ui.core"
+		xmlns:commons="sap.ui.commons"
+		xmlns:m="sap.m"
+		height="100%">
+
+	<m:Page
+			showHeader="false"
+			enableScrolling="false"
+			class="sapUiContentPadding">
+		<m:content>
+			<Table
+					id="authtable"
+					rows="{AuthModel>/results}"
+					selectionMode="Single"
+					visibleRowCount="7"
+					setEnableGrouping="true"
+					ariaLabelledBy="title">
+				<extension>
+					<m:OverflowToolbar>
+						<m:Title id="title" text="{i18n>AribaAuthText}"/>
+						<m:ToolbarSpacer/>
+						<m:ToggleButton
+						text="{i18n>SaveC}"
+						type="Emphasized"
+						press="onSavePress"
+						/>
+
+					</m:OverflowToolbar>
+				</extension>
+				<columns>
+					<Column sortProperty="Realm" filterProperty=" Center">
+						<m:Label text="{i18n>RealmID}"/>
+						<template>
+							<m:Text text="{AuthModel>Realm}" wrapping="false"/>
+						</template>
+					</Column>
+
+					<Column>
+						<m:Label text="{i18n>AuthType}"/>
+						<template>
+							<m:Select selectedKey="{AuthModel>AuthType}" items="{AuthModel>/Authtypes}">
+								<core:Item text="{AuthModel>Name}" key="{AuthModel>Name}"/>
+							</m:Select>
+						</template>
+					</Column>
+				</columns>
+			</Table>
+			
+		<m:MessageStrip
+			text="{i18n>AuthMessage}"
+			type="Information"
+			showIcon="true"
+			customIcon="sap-icon://locked"
+			class="sapUiMediumMarginBottom">
+		</m:MessageStrip>
+		</m:content>
+	</m:Page>
+
+</mvc:View>

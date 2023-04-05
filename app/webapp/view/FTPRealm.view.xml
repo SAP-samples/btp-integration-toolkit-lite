@@ -1,0 +1,44 @@
+<mvc:View displayBlock="true" controllerName="com.sap.pgp.dev.ItkApp.controller.FTPRealm" height="100%"
+	  xmlns="sap.m"
+	  xmlns:u="sap.uxap"
+	  xmlns:f="sap.f"
+	  xmlns:layout="sap.ui.layout"
+	  xmlns:mvc="sap.ui.core.mvc">
+
+	<f:FlexibleColumnLayout layout="{RealmView>/layout}">
+
+		<f:beginColumnPages>
+
+					<Table id="idCategoryTable" itemPress=".showDetail" items="{
+						path: 'ItkMo>/FTPServer'
+						}">
+					<headerToolbar>
+						<OverflowToolbar>
+						
+						</OverflowToolbar>
+					</headerToolbar>
+
+						<columns>
+							<Column>
+								<Text text="{i18n>RealmID}" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Navigation">
+								<cells>
+									<ObjectAttribute text="{ItkMo>Realm}" />
+								
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+
+		</f:beginColumnPages>
+
+		 <f:midColumnPages>
+			<mvc:XMLView id="FTPRealmDetails" viewName="com.sap.pgp.dev.ItkApp.view.FTPRealmDetails" />
+		</f:midColumnPages>
+
+    </f:FlexibleColumnLayout>
+
+</mvc:View>

@@ -1,0 +1,107 @@
+<mvc:View
+	controllerName="com.sap.pgp.dev.ItkApp.controller.Home"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:t="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page showHeader="false">
+		<landmarkInfo>
+			<PageAccessibleLandmarkInfo
+				rootRole="Region"
+				rootLabel="{i18n>Home_rootLabel}"
+				contentRole="Main"
+				contentLabel="{i18n>Home_contentLabel}"/>
+		</landmarkInfo>
+
+		<Image
+				src="{
+					parts: [{path:'i18n>homeImage'}, {path:'i18n>homeImage'}],
+					formatter: '.formatter.srcImageValue'
+					
+				}"
+				width="100%"
+						height="20%"
+			/>
+
+		<l:BlockLayout
+			id="BlockLayout"
+			background="Default">
+
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell
+					backgroundColorSet="ColorSet11"
+					backgroundColorShade="ShadeD">
+					<l:VerticalLayout>
+						<core:Icon
+							src="sap-icon://role"
+							size="2.5rem"
+							color="Default"/>
+						<Title
+							id="administrationTile"
+							text="SAP Ariba Procurement Application"
+							level="H3"
+							titleStyle="H2"
+							class="sapUiTinyMarginTopBottom"/>
+						<Text
+							text="Access Ariba Application to view Sourcing and Supplier Data"
+							class="sapUiTinyMarginBottom"/>
+						<Link
+							text="SAP Ariba Procurement"
+							href="{i18n>aribarealm}"
+							target="_blank"
+							tooltip="Access Ariba Application to view Sourcing Events and Supplier Data"/>
+						
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell
+					backgroundColorSet="ColorSet11"
+					backgroundColorShade="ShadeB">
+					<l:VerticalLayout>
+						<core:Icon
+							src="sap-icon://horizontal-combination-chart"
+							size="2.5rem"
+							color="Default"/>
+						<Title
+							id="productTile"
+							text="BTP Job Scheduler"
+							level="H3"
+							titleStyle="H2"
+							class="sapUiTinyMarginTopBottom"/>
+						<Text
+							text="Schedule Batch Job in Business Technology Platform to run Integration Jobs"
+							class="sapUiTinyMarginBottom"/>
+						<Link
+							text="SAP Business Technology Platform"
+							href="{i18n>btplink}"
+							target="_blank"
+							tooltip="Access Business Technology Platform"/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell
+					backgroundColorSet="ColorSet11"
+					backgroundColorShade="ShadeD">
+					<l:VerticalLayout>
+						<core:Icon
+							src="sap-icon://multi-select"
+							size="2.5rem"
+							color="Default"/>
+						<Title
+							text="SAP Ariba Integration Lite GitHub"
+							level="H3"
+							titleStyle="H2"
+							class="sapUiTinyMarginTopBottom"/>
+						<Text
+							text="Access to Source Code, Integration Lite Documentation and other details"
+							class="sapUiTinyMarginBottom"/>
+						<Link
+							text="Git Hub"
+							href="{i18n>gitlink}"
+							target="_blank"
+							tooltip="Access ITK Git"/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>
+</mvc:View>

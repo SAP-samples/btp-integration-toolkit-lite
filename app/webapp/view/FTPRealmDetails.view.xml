@@ -1,0 +1,118 @@
+<mvc:View displayBlock="true" controllerName="com.sap.pgp.dev.ItkApp.controller.FTPRealmDetails" height="100%"
+		xmlns="sap.uxap"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:m="sap.m"
+		xmlns:f="sap.f"
+		xmlns:l="sap.ui.layout"
+		xmlns:commons="sap.ui.commons"
+		xmlns:core="sap.ui.core"
+		xmlns:form="sap.ui.layout.form">
+
+	   <ObjectPageLayout id="ObjectPageLayout"
+					 showTitleInHeaderContent="true"
+					alwaysShowContentHeader="false"
+					preserveHeaderStateOnScroll="false"
+					headerContentPinnable="true"
+					isChildPage="true"
+					upperCaseAnchorBar="false">
+				<headerTitle>
+					<ObjectPageDynamicHeaderTitle>
+						<actions>
+					<m:ToggleButton
+						text="{i18n>Edit}"
+						type="Emphasized"
+						press="onEdit"
+						enabled="{oViewModelDetail>/editbutton}"/>
+					<m:Button
+						text="{i18n>Save}"
+						type="Transparent"
+						press="onSave"
+						enabled="{oViewModelDetail>/savebutton}"/>
+					<m:Button
+						text="{i18n>Cancel}"
+						type="Transparent"
+						press="onCancel"
+						enabled="{oViewModelDetail>/cancelbutton}"/>
+				</actions>
+					</ObjectPageDynamicHeaderTitle>
+				</headerTitle>
+		<sections>
+			<ObjectPageSection title="FTP Setup Information">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<form:SimpleForm
+									editable="false"
+									id="SimpleFormDisplay354wideDual"
+			layout="ResponsiveGridLayout"
+			title="Basic Information"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false">
+								<form:content>
+								<m:Label text="{i18n>RealmID}"/>
+							    <m:Text id="RealmID" text="{SupplierDetailView>/Realm}"/>
+								<m:Label text="{i18n>host}" />
+								<m:Input id="hostname" value="{SupplierDetailView>/hostname}" width="250px" editable="{oViewModelDetail>/editable}" />
+								<m:Label text="{i18n>port}" />
+								<m:Input id="port" value="{SupplierDetailView>/port}" width="100px" editable="{oViewModelDetail>/editable}" />
+								<m:Label text="{i18n>ftpusername}" />
+								<m:Input id="username" value="{SupplierDetailView>/username}" width="250px" editable="{oViewModelDetail>/editable}" />
+							    <m:Label labelFor="rbg4" text="{i18n>modeofauth}" />
+								<m:RadioButtonGroup id="authradio" select=".onAuthClick">
+								<m:RadioButton id="Password" text="{i18n>pass}" enabled="{oViewModelDetail>/editable}" />
+								<m:RadioButton id="Certificate" text="{i18n>privatekey}" editable="{oViewModelDetail>/editable}"/>
+								</m:RadioButtonGroup>
+								<m:MessageStrip
+									text="{i18n>FTPMessage}"
+									type="Information"
+									showIcon="true"
+									customIcon="sap-icon://locked"
+									class="sapUiMediumMarginBottom">
+								</m:MessageStrip>
+								<m:Label id="lblphassphrase" text="{i18n>passphrase}" visible="false" />
+								<m:Input id="Inppassphrase" value="{SupplierDetailView>/passphrase}" type="Password" width="250px" editable="{oViewModelDetail>/editable}" visible="false"/>
+								<core:Title text="{i18n>proxy}" />
+								<m:Label id="lblproxytype" text="{i18n>proxytype}"/>
+								<m:Select id="proxytypeselect" selectedKey="{SupplierDetailView>/proxytype}" items="{SupplierDetailView>/aProxyTypes}" editable="{oViewModelDetail>/editable}">
+								<core:Item text="{SupplierDetailView>Name}" key="{SupplierDetailView>Name}"/>
+							     </m:Select>
+								<m:Label text="{i18n>proxyhost}" />
+								<m:Input id="ProxyHost" value="{SupplierDetailView>/proxyhost}" width="250px" editable="{oViewModelDetail>/editable}"/>
+								<m:Label text="{i18n>ProxyPort}" />
+								<m:Input id="ProxyPort" value="{SupplierDetailView>/proxyport}" width="100px" editable="{oViewModelDetail>/editable}"/>
+								<m:Label text="{i18n>ID}" />
+								<m:Input id="FTPID" value="{SupplierDetailView>/ID}" width="100px" visible="false"/>
+								<core:Title text="{i18n>adddetail}" />
+								<m:Label text="{i18n>updir}" />
+								<m:Input id="uploaddir" value="{SupplierDetailView>/UploadDir}" editable="{oViewModelDetail>/editable}" />
+								<m:Label text="{i18n>archdir}" />
+								<m:Input id="archivedir" value="{SupplierDetailView>/ArchiveDir}" editable="{oViewModelDetail>/editable}"/>
+								</form:content>
+							</form:SimpleForm>
+							<!-- <m:HBox>
+							 <m:Button text="Edit" press="onEdit" enabled="{oViewModelDetail>/editbutton}"/>
+							 <m:ToolbarSpacer width="10px"/>
+							 <m:Button text="Save" press="onSave" enabled="{oViewModelDetail>/savebutton}"/>
+							 <m:ToolbarSpacer width="10px"/>
+							 <m:Button text="Cancel" press="onCancel" enabled="{oViewModelDetail>/cancelbutton}"/>
+							 </m:HBox> -->
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			
+		</sections> 
+	</ObjectPageLayout>
+
+</mvc:View>

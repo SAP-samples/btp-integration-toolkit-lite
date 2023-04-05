@@ -1,0 +1,21 @@
+{
+  "welcomeFile": "/ItkApp/index.html",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/backend/(.*)",
+      "target": "$1",
+      "authenticationType": "xsuaa",
+      "destination": "backend"
+    },
+    {
+      "source": "^/ItkApp/(.*)$",
+      "target": "$1",
+      "localDir": "webapp",
+      "authenticationType": "xsuaa"
+    }
+  ]
+}

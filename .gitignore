@@ -1,0 +1,11 @@
+# Node artifact files
+node_modules/
+app/dist/
+logs/
+gen/
+mta_archives/
+csv/
+package-lock.json
+SqLite.sql
+itksqlite.db
+default-env.json

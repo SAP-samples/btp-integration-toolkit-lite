@@ -1,0 +1,84 @@
+<mvc:View displayBlock="true" controllerName="com.sap.pgp.dev.ItkApp.controller.ImportEventsConfig"
+        xmlns="sap.ui.table"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:unified="sap.ui.unified"
+		xmlns:core="sap.ui.core"
+		xmlns:commons="sap.ui.commons"
+		xmlns:m="sap.m"
+		height="100%">
+
+	<m:Page
+			showHeader="false"
+			enableScrolling="false"
+			class="sapUiContentPadding">
+		<m:content>
+			<Table
+					id="eventstable"
+					rows="{EventsModel>/results}"
+					selectionMode="Single"
+					visibleRowCount="7"
+					setEnableGrouping="true"
+					ariaLabelledBy="title">
+				<extension>
+					<m:OverflowToolbar>
+						<m:Title id="title" text="Import Events Configuration"/>
+						<m:ToolbarSpacer/>
+						<m:ToggleButton
+						text="{i18n>SaveC}"
+						type="Emphasized"
+						press="onSavePress"
+						/>
+						<!-- <m:Button
+						icon="sap-icon://save"
+						tooltip="Save Events for Import to Ariba"
+						press="onSavePress"/> -->
+					</m:OverflowToolbar>
+				</extension>
+				<rowSettingsTemplate>
+					<RowSettings highlight="{EventsModel>Events}"/>
+				</rowSettingsTemplate>
+				<columns>
+					<Column sortProperty="DataCenter" filterProperty=" Center">
+						<m:Label text="{i18n>RealmID}"/>
+						<template>
+							<m:Text text="{EventsModel>Realm}" wrapping="false"/>
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="{i18n>EventName}"/>
+						<template>
+							<m:Text text="{EventsModel>Eventname}" wrapping="false"/>
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="{i18n>process}"/>
+						<template>
+							<m:Text text="{EventsModel>Process}" wrapping="false"/>
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="{i18n>activate}"/>
+						<template>
+								<commons:CheckBox checked="{EventsModel>Checked}" />
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="{i18n>loadoper}"/>
+						<template>
+							<m:Select selectedKey="{EventsModel>Operation}" items="{EventsModel>/Operations}">
+								<core:Item text="{EventsModel>Name}" key="{EventsModel>Name}"/>
+							</m:Select>
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="{i18n>downloadir}"/>
+						<template>
+								<m:Input value="{EventsModel>ImportDir}"/>
+						</template>
+					</Column>
+				</columns>
+			</Table>
+		</m:content>
+	</m:Page>
+
+</mvc:View>

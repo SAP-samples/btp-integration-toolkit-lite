@@ -1,0 +1,55 @@
+{
+	"selectedKey": "",
+
+	"navigation": [
+		{
+			"titleI18nKey": "sideContentHome",
+			"icon": "sap-icon://home",
+			"expanded": true,
+			"key": "",
+			"items": []
+		},
+		{
+			"titleI18nKey": "ConnParameter",
+			"icon": "sap-icon://action-settings",
+			"expanded": true,
+			"key": "ItkBTP",
+			"items": [
+				{
+					"titleI18nKey": "RealmConfig",
+					"key": "RealmConfig"
+				},
+				{
+					"titleI18nKey": "FTPRealm",
+					"key": "FTPRealm"
+				},
+				{
+					"titleI18nKey": "ImportEventsConfig", 
+					"key": "ImportEventsConfig"
+				},
+				{
+					"titleI18nKey": "ExportEventsConfig", 
+					"key": "ExportEventsConfig"
+				},
+				{
+					"titleI18nKey": "SpendVizConfig", 
+					"key": "SpendVizConfig"
+				},
+				{
+					"titleI18nKey": "AribaAuthConfig", 
+					"key": "AribaAuthConfig"
+				},
+				{
+					"titleI18nKey": "AribaSMTPConfig", 
+					"key": "AribaSMTPConfig"
+				}
+				
+			]
+		},
+		{
+			"titleI18nKey": "Tracker",
+			"icon": "sap-icon://multiselect-all",
+			"key": "Transactions"
+		}
+	]
+}

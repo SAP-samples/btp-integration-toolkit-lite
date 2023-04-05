@@ -1,0 +1,106 @@
+<mvc:View displayBlock="true" controllerName="com.sap.pgp.dev.ItkApp.controller.ExportsEventsConfig"
+        xmlns="sap.ui.table"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:unified="sap.ui.unified"
+		xmlns:core="sap.ui.core"
+		xmlns:commons="sap.ui.commons"
+		xmlns:form="sap.ui.layout.form"
+		xmlns:m="sap.m"
+		height="100%">
+
+	<m:Page
+			showHeader="false"
+			enableScrolling="false"
+			class="sapUiContentPadding">
+		
+			<Table
+					id="eventstable"
+					rows="{EventsModel>/results}"
+					selectionMode="Single"
+					visibleRowCount="7"
+					rowActionCount="1"
+					setEnableGrouping="true"
+					ariaLabelledBy="title">
+				<extension>
+					<m:OverflowToolbar>
+						<m:Title id="title" text="{i18n>exportevent}"/>
+					</m:OverflowToolbar>
+				</extension>
+				<rowSettingsTemplate>
+					<RowSettings highlight="{EventsModel>Events}"/>
+				</rowSettingsTemplate>
+				<columns>
+					<Column sortProperty="DataCenter" filterProperty=" Center">
+						<m:Label text="{i18n>RealmID}"/>
+						<template>
+							<m:Text text="{EventsModel>Realm}" wrapping="false"/>
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="{i18n>EventName}"/>
+						<template>
+							<m:Text text="{EventsModel>Eventname}" wrapping="false"/>
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="{i18n>process}"/>
+						<template>
+							<m:Text text="{EventsModel>Process}" wrapping="false"/>
+						</template>
+					</Column>
+				</columns>
+				<rowActionTemplate>
+					<RowAction>
+					<items>
+						<RowActionItem type="Navigation" press="onDetailsPress" icon="sap-icon://feeder-arrow"></RowActionItem>
+					</items>
+					</RowAction>
+				</rowActionTemplate>
+
+			</Table>
+
+		<m:VBox class="sapUiSmallMargin">
+		<form:SimpleForm id="exporteventform"
+		    visible="false"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Configure Export Event"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<form:content>
+				<m:Label text="{i18n>RealmName}" />
+				<m:Text id="TXRealm"/>
+				<m:Label text="{i18n>EventName}" />
+				<m:Text id="TXEventName"/>
+				<m:Label text="{i18n>process}" />
+				<m:Text id="TXProcess"/>
+				<m:Label text="{i18n>InitLoad}" />
+				<m:Input id="INPInitLoad"
+					type="Text"
+					editable ="true"
+					width = "500px"
+					placeholder="Input in format YYYY-DD-MM HH:MM:SS" />
+				<m:Label text="{i18n>LastLoad}" />
+				<m:Text id="TXLastLoadDate"/>
+				<m:Label text="{i18n>activate}" />
+				<m:CheckBox id='TXActivated' enabled="true" />
+				<m:Label text="" />
+				<m:Button id="saveevent" text="{i18n>saveevent}" press="OnPressSave" type="Emphasized" width="20%" />	
+			</form:content>
+		</form:SimpleForm>
+	</m:VBox>
+
+	</m:Page>
+
+</mvc:View>
