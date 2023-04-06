@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: btp-integration-toolkit-lite
 Upstream-Contact: g.ramachandran@sap.com
-Source: <https://github.com/sap-samples/YOUR-REPO-NAME>
+Source: <https://github.com/sap-samples/btp-integration-toolkit-lite>
 Disclaimer: The code in this project may include calls to APIs ("API Calls") of
  SAP or third-party products or services developed outside of this project
  ("External Products").
@@ -25,5 +25,5 @@ Disclaimer: The code in this project may include calls to APIs ("API Calls") of
  parties the right to use of access any SAP External Product, through API Calls.
 
 Files: *
-Copyright:  <2022 SAP SE or an SAP affiliate company and btp-integration-toolkit-lite contributors
+Copyright:  2022 SAP SE or an SAP affiliate company and btp-integration-toolkit-lite contributors
 License: Apache-2.0
