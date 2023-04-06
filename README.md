@@ -11,6 +11,9 @@ Sample View of ITK Lite Admin Application
 
 ![Reference Image](/ITKLite.jpg)
 
+## Database Requirement
+Use the main GIT branch if you are using PostgreSQL as your database in BTP. If the database is Hana DB , look at the example folder to convert the database HDB and also update MTA.YAML to deploy Multi Target Application with Hana Database.
+
 ## Deploy the Application
 Simply run the following command to deploy the deployable file to your BTP Cloud Foundry environment.
 
