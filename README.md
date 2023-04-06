@@ -5,7 +5,7 @@ Welcome to sample use case of ITK Lite 4 Procurement BTP Application. This appli
 Please see the pre-requisites and the required BTP services in SAP Discovery Center mission and activate before cloning/forking the GIT Repository.
 
 ## Description
-As SAP announced EOS(End of Support & Service) for current ITK tool from December 31, 2023. The ITK Lite powered by BTP solution allows buying organizations to integrate their Non SAP-ERP systems through SFTP channel with an SAP Ariba cloud solution to exchange master, transactional and spend viz data via CSV file upload and download. 
+As SAP announced EOS(End of Support & Service) for current ITK(Integration Toolkit) tool from December 31, 2023. The ITK Lite powered by BTP solution allows buying organizations to integrate their Non SAP-ERP systems through SFTP channel with an SAP Ariba cloud solution to exchange master, transactional and spend viz data via CSV file upload and download. 
 
 Sample View of ITK Lite Admin Application
 
