@@ -1,3 +1,5 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-integration-toolkit-lite)](https://api.reuse.software/info/github.com/SAP-samples/btp-integration-toolkit-lite)
+
 # Welcome to ITK Lite 4 Procurement
 Welcome to sample use case of ITK Lite 4 Procurement BTP Application. This application developed on the CAPM (Cloud Application Programming Model) is a possible alterative to current ITK running as command line utility to transfer Master, Transactional and Spend Data between your SAP Ariba system and your back-end ERP environment.   
 
