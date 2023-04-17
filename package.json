@@ -59,6 +59,7 @@
     "ui5-start": "ui5 serve --port 8080",
     "build": "ui5 build -a --clean-dest ",
     "mta:package": "mbt build --mtar ITKApp_0.0.1.mtar --platform cf",
+    "mta:package:deploy": "npm run mta:package && npm run mta:deploy",
     "mta:deploy": "cf deploy mta_archives/ITKApp_0.0.1.mtar -f",
     "local:docker:run": "docker-compose up",
     "local:db:build": "npx cds-dbm deploy --create-db"

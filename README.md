@@ -20,7 +20,7 @@ Use the main GIT branch if you are using PostgreSQL as your database in BTP. If 
 Simply run the following command to deploy the deployable file to your BTP Cloud Foundry environment.
 
 ```
-npm run mta:deploy
+npm run mta:package:deploy
 ```
 
 ## Known Issues
