@@ -21,9 +21,9 @@ Use the main GIT branch if you are using PostgreSQL as your database in BTP. If 
 
 ## Deploy the Application
 Prior to running the package and deploy. 
-Step1: Go to app directory and run `npm i` command.
-Step2: Run the same command `npm i` under root directory as well. 
-Step 3: Run the following command to build and deploy the file to the SAP BTP, Cloud Foundry environment.
+Step1: Go to app directory and run `npm i` command. 
+Step2: Run the same command `npm i` under root directory as well.
+Step3: Run the following command to build and deploy the file to the SAP BTP, Cloud Foundry environment. 
 
 ```
 npm run mta:package:deploy
