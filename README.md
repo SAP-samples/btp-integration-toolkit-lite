@@ -20,7 +20,8 @@ Use the main GIT branch if you are using PostgreSQL as your database in BTP. If 
 Use the main GIT branch if you are using PostgreSQL as your database in BTP. If the database is Hana DB , look at the example folder to convert the database HDB and also update MTA.YAML to deploy Multi Target Application with Hana Database.
 
 ## Deploy the Application
-Prior to running the package and deploy.\ 
+Prior to running the package and deploy.
+
 Step1: Go to app directory and run `npm i` command.\
 Step2: Run the same command `npm i` under root directory as well.\
 Step3: Run the following command to build and deploy the file to the SAP BTP, Cloud Foundry environment.
