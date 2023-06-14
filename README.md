@@ -1,10 +1,10 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-integration-toolkit-lite)](https://api.reuse.software/info/github.com/SAP-samples/btp-integration-toolkit-lite)
 
 # Welcome to ITK Lite 4 Procurement
-Welcome to the sample use case of the ITK Lite 4 Procurement BTP application. This application developed on the Cloud Application Programming Model (CAP) is a possible alternative to the current ITK running as command line utility to transfer master, transactional, and spend data between your SAP Ariba system and your back-end ERP environment.  
+Welcome to the sample use case of the ITK Lite 4 Procurement application. This open source application developed using the Cloud Application Programming Model (CAP) will help as refernece for customers developing applications internally as a possible alternative to the current ITK running as command line utility to transfer master, transactional, and spend data between your SAP Ariba system and your back-end ERP environment.  
 
 ## Requirements
-This solution utilizes BTP Services. If customer wants to this open source as reference to develop solution integrating to SAP ariba. Below are pre-requisite services for this application. 
+This solution utilizes BTP Services. If customers wants to use a different technology integrating to SAP Ariba and SFTP, the source code can be used as a guidance. Below are pre-requisite services for using this application. \
 a. SAP Credential Store \
 b. SAP Hana Cloud DB (or) PostgreSQL on SAP BTP, hyperscaler \
 c. SAP Application Logging Service for SAP BTP \
