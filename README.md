@@ -4,11 +4,11 @@
 Welcome to the sample use case of the ITK Lite 4 Procurement BTP application. This application developed on the Cloud Application Programming Model (CAP) is a possible alternative to the current ITK running as command line utility to transfer master, transactional, and spend data between your SAP Ariba system and your back-end ERP environment.  
 
 ## Requirements
-This solution utilizes BTP Services. If customer wants to this open source as reference to develop internally using customer preference. Below are pre-requisite services for this application. 
-a. SAP Credential Store
-b. SAP Hana Cloud DB (or) PostgreSQL on SAP BTP, hyperscaler
-c. SAP Application Logging Service for SAP BTP
-d. SAP Job Scheduling Service
+This solution utilizes BTP Services. If customer wants to this open source as reference to develop solution integrating to SAP ariba. Below are pre-requisite services for this application. 
+a. SAP Credential Store \
+b. SAP Hana Cloud DB (or) PostgreSQL on SAP BTP, hyperscaler \
+c. SAP Application Logging Service for SAP BTP \
+d. SAP Job Scheduling Service \
 e. SAP BTP, Cloud Foundry Runtime
 
 ## Description
